@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VADANTHARA BAROKAH MUMTAZ - Jual Beli & Jasa Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --sunshine: #FFD700;
+            --orange-peel: #FFA500;
+            --amber: #FF8C00;
+            --dark-orange: #FF7F00;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF9F0;
+            color: #333;
+        }
+        
+        .nav-gradient {
+            background: linear-gradient(135deg, var(--sunshine), var(--dark-orange));
+        }
+        
+        .btn-primary {
+            background: var(--orange-peel);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--amber);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 140, 0, 0.25);
+        }
+        
+        .product-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .products-container:hover .product-card {
+            filter: blur(4px);
+            opacity: 0.7;
+            transform: scale(0.95) translateY(15px);
+        }
+        
+        .products-container .product-card:hover {
+            filter: blur(0);
+            opacity: 1;
+            transform: scale(1.05) translateY(0);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+        }
+        
+        .category-chip {
+            background: var(--sunshine);
+            transition: all 0.3s ease;
+        }
+        
+        .category-chip:hover {
+            background: var(--amber);
+            transform: scale(1.05);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="nav-gradient text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="logo websaite.jpg" alt="Logo MarketHub" class="w-10 h-10 rounded-full">
+                    <span class="text-2xl font-bold">V B M</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-gray-100 font-medium">Beranda</a>
+                    <a href="#" class="hover:text-gray-100 font-medium">Produk</a>
+                    <a href="#" class="hover:text-gray-100 font-medium">Jasa</a>
+                    <a href="#" class="hover:text-gray-100 font-medium">Tentang</a>
+                    <a href="#" class="hover:text-gray-100 font-medium">Kontak</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-white text-orange-600 px-4 py-2 rounded-full font-medium hover:bg-gray-100">Masuk</button>
+                    <button class="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-gray-800">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Temukan & Sewa <span class="text-amber-600">Jasa Terbaik</span> dengan Mudah</h1>
+                <p class="text-lg text-gray-600 mb-8">Platform terlengkap untuk menjual produk dan menawarkan jasa profesional dengan transaksi aman dan terpercaya.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="btn-primary text-white px-8 py-3 rounded-full font-bold">Jelajahi Sekarang</button>
+                    <button class="bg-white border-2 border-amber-500 text-amber-600 px-8 py-3 rounded-full font-bold hover:bg-amber-50">Lihat Demo</button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37f35591-1418-45dc-8c41-e8671209065b.png" alt="Ilustrasi animasi cowok sedang melakukan transaksi online dengan latar belakang oranye" class="rounded-lg w-full max-w-md floating">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Kategori Populer</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="category-chip text-center py-4 px-2 rounded-lg cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f49747af-b00a-411f-a246-830a13edc8bf.png" alt="Ikon elektronik berwarna hitam" class="w-12 h-12 mb-2">
+                        <span class="font-medium">Elektronik</span>
+                    </div>
+                </div>
+                <div class="category-chip text-center py-4 px-2 rounded-lg cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ff18b04-820d-467a-9594-b483e7d06365.png" alt="Ikon fashion pakaian berwarna hitam" class="w-12 h-12 mb-2">
+                        <span class="font-medium">Fashion</span>
+                    </div>
+                </div>
+                <div class="category-chip text-center py-4 px-2 rounded-lg cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/59e3a483-ae23-44d1-afb7-9fcfe747753a.png" alt="Ikon otomotif mobil berwarna hitam" class="w-12 h-12 mb-2">
+                        <span class="font-medium">Otomotif</span>
+                    </div>
+                </div>
+                <div class="category-chip text-center py-4 px-2 rounded-lg cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/229026f0-ddd0-4ef4-9508-f1006d29059d.png" alt="Ikon properti rumah berwarna hitam" class="w-12 h-12 mb-2">
+                        <span class="font-medium">Properti</span>
+                    </div>
+                </div>
+                <div class="category-chip text-center py-4 px-2 rounded-lg cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a5c12875-9bf9-42e4-8792-77d02de81124.png" alt="Ikon kecantikan make up berwarna hitam" class="w-12 h-12 mb-2">
+                        <span class="font-medium">Kecantikan</span>
+                    </div>
+                </div>
+                <div class="category-chip text-center py-4 px-2 rounded-lg cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf2722a4-d507-4184-92e2-e50d14a61d10.png" alt="Ikon jasa tukang bangunan berwarna hitam" class="w-12 h-12 mb-2">
+                        <span class="font-medium">Jasa Tukang</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl font-bold">Produk Terbaru</h2>
+                <a href="#" class="text-amber-600 font-medium hover:underline">Lihat Semua</a>
+            </div>
+            
+            <div class="products-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <a href="https://wa.me/6287875619573">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/69817a24-3c36-42fd-a67f-9e067fb6ac16.png" alt="Smartphone premium dengan layar besar dan kamera belakang multi lensa dengan warna gradasi biru" class="w-full h-48 object-cover">
+                        </a>
+                        <span class="bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded absolute top-2 left-2">BARU</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Smartphone X Pro 2023</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                ★★★★★
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(128)</span>
+                        </div>
+                        <div class="font-bold text-lg text-amber-600 mb-3">Rp6.499.000</div>
+                        <button class="w-full bg-amber-100 text-amber-700 py-2 rounded-lg font-medium hover:bg-amber-200 transition">+ Keranjang</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/445c07fb-a1e1-4f35-962c-5577a5ae58af.png" alt="Jam tangan digital hitam dengan fitur kesehatan dan sporty look untuk pria aktif" class="w-full h-48 object-cover">
+                        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded absolute top-2 left-2">HOT</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Smartwatch Pro 3</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(86)</span>
+                        </div>
+                        <div class="font-bold text-lg text-amber-600 mb-3">Rp1.299.000</div>
+                        <button class="w-full bg-amber-100 text-amber-700 py-2 rounded-lg font-medium hover:bg-amber-200 transition">+ Keranjang</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/607b3921-75af-4ad9-b5b4-ae2dd0af51cb.png" alt="Kamera mirrorless profesional dengan lensa besar dalam warna hitam matte untuk fotografi serius" class="w-full h-48 object-cover">
+                        <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded absolute top-2 left-2">DISKON 20%</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Kamera Mirrorless Z6</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                ★★★★★
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(214)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="font-bold text-lg text-amber-600">Rp12.999.000</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">Rp15.999.000</span>
+                        </div>
+                        <button class="w-full bg-amber-100 text-amber-700 py-2 rounded-lg font-medium hover:bg-amber-200 transition mt-2">+ Keranjang</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f5d4d6ea-307d-4296-8627-aaedd9dd545d.png" alt="Headphone wireless premium dengan bantalan telinga kulit dan koneksi bluetooth, warna hitam elegan" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Headphone Pro Max</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                ★★★★☆
+                            </div>
+                            <span class="text-gray-500 text-sm ml-1">(157)</span>
+                        </div>
+                        <div class="font-bold text-lg text-amber-600 mb-3">Rp3.499.000</div>
+                        <button class="w-full bg-amber-100 text-amber-700 py-2 rounded-lg font-medium hover:bg-amber-200 transition">+ Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl font-bold">Jasa Unggulan</h2>
+                <a href="#" class="text-amber-600 font-medium hover:underline">Lihat Semua</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                    <a href="https://wa.me/yourphonenumber">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee9254b7-8dd2-44cf-81a5-d056d0866fad.png" alt="Desainer grafis sedang bekerja di komputer dengan layar besar menampilkan desain vektor profesional" class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Desain Grafis Profesional</h3>
+                        <p class="text-gray-600 mb-4">Layanan desain logo, banner, brosur, dan materi promosi lainnya dengan kualitas premium.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">Mulai Rp150.000</span>
+                            <button class="bg-amber-100 text-amber-700 px-4 py-2 rounded-lg font-medium hover:bg-amber-200">Pesan Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/19c0f880-1eb8-4786-a9fa-a9733925c284.png" alt="Tukang bangunan sedang memasang keramik dengan alat professional di rumah modern" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Jasa Bangun & Renovasi</h3>
+                        <p class="text-gray-600 mb-4">Pembangunan dan renovasi rumah dengan tenaga ahli berpengalaman dan bahan berkualitas.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">Mulai Rp500.000/hari</span>
+                            <button class="bg-amber-100 text-amber-700 px-4 py-2 rounded-lg font-medium hover:bg-amber-200">Pesan Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="foto umam 2.jpg" alt="Fotografer profesional sedang memotret model dengan kamera DSLR di studio dengan lighting perfection" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Jasa Fotografi Profesional</h3>
+                        <p class="text-gray-600 mb-4">Sesi foto produk, pernikahan, atau portrait dengan hasil berkualitas tinggi dan editing profesional.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">Mulai Rp300.000</span>
+                            <button class="bg-amber-100 text-amber-700 px-4 py-2 rounded-lg font-medium hover:bg-amber-200">Pesan Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-amber-500 to-yellow-500">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Mulai Berjualan di Vadanthara Baroqah Mumtaz Sekarang!</h2>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Bergabunglah dengan ribuan penjual yang sudah sukses mengembangkan bisnis mereka bersama kami.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-amber-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100">Daftar sebagai Penjual</button>
+                <button class="bg-black bg-opacity-20 text-white px-8 py-3 rounded-full font-bold hover:bg-opacity-30">Pelajari Caranya</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Berminat dengan produk atau jasa kami?</h2>
+                <p class="text-gray-600 mb-6">Anda bisa langsung menghubungi kami via WhatsApp untuk bertanya atau melakukan pemesanan</p>
+                <a href="https://wa.me/6287875619573" class="inline-flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6842d81-a686-47a4-8153-d6cc4db0928b.png" alt="WhatsApp logo" class="w-6 h-6 mr-2">
+                    <span>Hubungi via WhatsApp (6287875619573)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo websaite.jpg" alt="Logo kecil MarketHub" class="w-8 h-8">
+                        <span class="text-xl font-bold">V B M</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Platform jual beli dan jasa terbaik dengan pengalaman pengguna yang modern dan aman.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4eaa6d3e-783e-4169-8834-338afe0102a5.png" alt="Ikon media sosial Facebook" class="w-8 h-8"></a>
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/59889824-a8aa-4f6d-ae2e-00c51b7e11d9.png" alt="Ikon media sosial Instagram" class="w-8 h-8"></a>
+                        <a href="#"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/57ed52aa-c7a5-4946-9df1-d9a7f06cf6d7.png" alt="Ikon media sosial Twitter" class="w-8 h-8"></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Perusahaan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Karir</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Bantuan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pusat Bantuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kebijakan Pengembalian</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Berlangganan</h3>
+                    <p class="text-gray-400 mb-4">Dapatkan info promo dan penawaran terbaik ke email Anda</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Alamat email" class="px-4 py-2 rounded-l-lg w-full text-gray-800">
+                        <button class="bg-amber-500 text-white px-4 py-2 rounded-r-lg hover:bg-amber-600">Kirim</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 VADANTHARA BAROKAH MUMTAZ</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tambahan efek interaktif
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animasi scroll halus
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Efek hover untuk kartu produk
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.boxShadow = '0 20px 40px rgba(255, 140, 0, 0.3)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.boxShadow = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
